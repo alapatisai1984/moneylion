@@ -17,6 +17,8 @@ exports.init = function (p) {
     if (!check.status) {
         return check;
     }
+    p.data.email = p.data.email.toLowerCase();
+    p.data.featureName = p.data.featureName.toLowerCase();
 
     return new Promise((resolve, reject) => { 
         DB.getConnection(function (poolErr, conn) {
